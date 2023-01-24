@@ -1,4 +1,5 @@
 program overlap
+	use OMP_LIB
 	use mt19937_64
 	integer(8) :: seed = 5167171
 	integer :: total_ions, i, j, k, i2, olap_timesteps, olaps_total, n_rounds
@@ -21,9 +22,9 @@ program overlap
 		call get_command_argument(4, argu)
 		read(argu,*),  n_rounds
 	else
-		olap_radius = 20.0 !nm
-		olap_dt = 100.0 !ps
-		dx = 10000.0 !nm
+		olap_radius = 10.0 !nm
+		olap_dt = 10.0 !ps
+		dx = 1000.0 !nm
 		n_rounds = 100
 
 	end if

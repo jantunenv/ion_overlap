@@ -1,5 +1,5 @@
 overlap : overlap.f90 mt19937-64.o
-	f95 overlap.f90 mt19937-64.o -o overlap -O3
+	f95 overlap.f90 mt19937-64.o -o overlap -O3 -fopenmp
 
 mt19937-64.o : mt19937-64.f95
 	f95 -c -O3 mt19937-64.f95
